@@ -1,39 +1,19 @@
 package com.example.notesappui.ui.onboard.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notesappui.databinding.ItemOnBoardBinding
 
+data class OnBoardModel(
+    val animation: Int,
+    val title: String,
+    val description: String
+)
+
 class OnBoardAdapter(
-    private val list: List<com.example.notesappui.data.model.OnBoardModel>,
-    private val onStartClick: () -> Unit,
-    private val onSkipClick: (Int) -> Unit
+    private val list: List<OnBoardModel>
 ) : RecyclerView.Adapter<OnBoardAdapter.OnBoardViewHolder>() {
-
-    inner class OnBoardViewHolder(
-        private val binding: ItemOnBoardBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(onBoardModel: com.example.notesappui.data.model.OnBoardModel, position: Int) {
-            with(binding) {
-                animationView.setAnimation(onBoardModel.animation)
-                tvTitle.text = onBoardModel.title
-                tvDescription.text = onBoardModel.description
-
-                val isLastPage = position == list.size - 1
-                btnStart.visibility = if (isLastPage) View.VISIBLE else View.INVISIBLE
-                btnStart.setOnClickListener { onStartClick() }
-
-                root.setOnClickListener {
-                    if (!isLastPage) {
-                        onSkipClick(position)
-                    }
-                }
-            }
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardViewHolder {
         val binding = ItemOnBoardBinding.inflate(
@@ -45,8 +25,18 @@ class OnBoardAdapter(
     }
 
     override fun onBindViewHolder(holder: OnBoardViewHolder, position: Int) {
-        holder.bind(list[position], position)
+        holder.bind(list[position])
     }
 
     override fun getItemCount(): Int = list.size
+
+    inner class OnBoardViewHolder(private val binding: ItemOnBoardBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(onBoard: OnBoardModel) {
+            binding.animationView.setAnimation(onBoard.animation)
+            binding.titleText.text = onBoard.title
+            binding.descriptionText.text = onBoard.description
+        }
+    }
 }

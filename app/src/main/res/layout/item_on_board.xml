@@ -3,51 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     android:orientation="vertical"
-    android:padding="36dp">
+    android:gravity="center">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
-        android:layout_width="264dp"
-        android:layout_height="264dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_speed="1.0" />
+        app:lottie_loop="true" />
 
     <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="match_parent"
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnStart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
-        android:backgroundTint="@android:color/white"
-        android:text="@string/start"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:cornerRadius="12dp" />
+        android:layout_marginTop="8dp"
+        android:textSize="16sp" />
 
 </LinearLayout>

@@ -8,17 +8,21 @@
     <fragment
         android:id="@+id/onBoardFragment"
         android:name="com.example.notesappui.ui.onboard.OnBoardFragment"
-    android:label="OnBoard"
-    tools:layout="@layout/fragment_on_board">
-    <action
-        android:id="@+id/action_onBoardFragment_to_mainFragment"
-        app:destination="@id/mainFragment" />
-</fragment>
+        android:label="OnBoardFragment"
+        tools:layout="@layout/fragment_on_board">
 
-<fragment
-android:id="@+id/mainFragment"
-android:name="com.example.notesappui.ui.main.MainFragment"
-    android:label="Main"
-    tools:layout="@layout/fragment_main" />
+        <action
+            android:id="@+id/action_onBoardFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/onBoardFragment"
+            app:popUpToInclusive="true" />
 
-    </navigation>
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.notesappui.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main" />
+
+</navigation>
