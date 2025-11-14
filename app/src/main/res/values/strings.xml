@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Notes App</string>
+    <string name="welcome_to_notes_app">Welcome to Notes App!</string>
+    <string name="get_started">Get Started</string>
 </resources>

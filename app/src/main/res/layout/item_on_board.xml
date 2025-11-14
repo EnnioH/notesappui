@@ -4,28 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="32dp">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
+    <ImageView
+        android:id="@+id/ivOnBoardImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true" />
+        android:layout_marginBottom="32dp"
+        android:src="@android:drawable/ic_menu_edit"
+        android:contentDescription="Onboarding image" />
 
     <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvOnBoardTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:text="Welcome to Notes App"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
     <TextView
-        android:id="@+id/descriptionText"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvOnBoardDescription"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="16sp" />
+        android:text="Create and manage your notes easily with our app. Keep your thoughts organized and accessible anytime."
+        android:textSize="16sp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp" />
 
 </LinearLayout>

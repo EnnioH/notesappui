@@ -4,15 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notesappui.databinding.ItemOnBoardBinding
-
-data class OnBoardModel(
-    val animation: Int,
-    val title: String,
-    val description: String
-)
+import com.example.notesappui.ui.onboard.model.OnBoardItem
 
 class OnBoardAdapter(
-    private val list: List<OnBoardModel>
+    private val items: List<OnBoardItem>
 ) : RecyclerView.Adapter<OnBoardAdapter.OnBoardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardViewHolder {
@@ -25,18 +20,19 @@ class OnBoardAdapter(
     }
 
     override fun onBindViewHolder(holder: OnBoardViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(items[position])
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = items.size
 
-    inner class OnBoardViewHolder(private val binding: ItemOnBoardBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class OnBoardViewHolder(
+        private val binding: ItemOnBoardBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(onBoard: OnBoardModel) {
-            binding.animationView.setAnimation(onBoard.animation)
-            binding.titleText.text = onBoard.title
-            binding.descriptionText.text = onBoard.description
+        fun bind(item: OnBoardItem) {
+            binding.ivOnBoardImage.setImageResource(item.imageRes)
+            binding.tvOnBoardTitle.text = item.title
+            binding.tvOnBoardDescription.text = item.description
         }
     }
 }

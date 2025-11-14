@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Notesappui" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.NotesAppUI" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
     </style>
 
-    <style name="Theme.Notesappui" parent="Base.Theme.Notesappui" />
+    <style name="Theme.NotesAppUI" parent="Base.Theme.NotesAppUI" />
 </resources>
